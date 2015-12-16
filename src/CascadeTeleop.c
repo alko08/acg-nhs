@@ -71,8 +71,8 @@ task main() {
   waitForStart();
 
  	StartTask(runDrive);
-	StartTask(nonArmSystem);
-	StartTask(armSystem);
+	//StartTask(nonArmSystem);
+	//StartTask(armSystem);
   while(true){
 
 	}
