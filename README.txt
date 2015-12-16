@@ -1,1 +1,1 @@
-The 2014-2015 software for the Likwid Oxygen team for Cascade Effect FTC Challenge.
+Advanced Concept Group's repository for stripped down code from resq-bot that works on gaia.
