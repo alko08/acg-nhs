@@ -48,10 +48,10 @@ public class ResQ_TeleOp extends ResQ_Library {
         drive(left, right); //Used with tracks
 
         //Drive modifications
-        if (gamepad1.x) {
+        /*if (gamepad1.x) {
             //Track speed 100%
             setDriveGear(3);
-        }
+        }*/
         if (gamepad1.y) {
             //Track speed 50%
             setDriveGear(2);
@@ -67,7 +67,7 @@ public class ResQ_TeleOp extends ResQ_Library {
 
         //****************BLOCK MANIPULATION****************//
 
-        if (gamepad2.x) {
+        /*if (gamepad2.x) {
             //toggle block intake
         }
         if (gamepad2.a) {
@@ -78,7 +78,7 @@ public class ResQ_TeleOp extends ResQ_Library {
             } else { //its not, so start it up
 
             }
-        }
+        }*/
         if (gamepad2.b) {
             //have the servo switch which side the blocks fall into
             //create an enum code to know which side the servo is already facing by default so we can change
@@ -87,7 +87,7 @@ public class ResQ_TeleOp extends ResQ_Library {
         //****************OTHER****************//
 
         //Hanging Winch
-        if (gamepad2.y) {
+        /*if (gamepad2.y) {
             //Hanging automation procedure
             //HangingAutomation();
         }
@@ -100,10 +100,10 @@ public class ResQ_TeleOp extends ResQ_Library {
             motorHangingMech.setPower(1.0f);
         } else {
             motorHangingMech.setPower(0);
-        }
+        }*/
 
         //Hanging Servos
-        float srvoHang1JoyCheck = ProcessToMotorFromJoy(-gamepad2.left_stick_y);
+        /*float srvoHang1JoyCheck = ProcessToMotorFromJoy(-gamepad2.left_stick_y);
         float srvoHang2JoyCheck = ProcessToMotorFromJoy(-gamepad2.right_stick_y);
         //Position based hanging
         if(srvoHang1JoyCheck > 0.05) { //big servo
@@ -144,7 +144,6 @@ public class ResQ_TeleOp extends ResQ_Library {
         srvoHang_2.setPosition(srvoHang2Position);
         telemetry.addData("Shoulder Servo", ""+srvoHang1Position);
         telemetry.addData("Elbow Servo", ""+srvoHang2Position);*/
-
 
 
         //****************TELEMETRY****************//
