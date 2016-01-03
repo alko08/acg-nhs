@@ -1,0 +1,18 @@
+public class teleop {
+    public void init() {
+        //Do some stuff with declaration of motors and stuff
+    }
+
+    public void loop() {
+        //if x is pressed
+            //go forward
+        
+    
+    
+    }
+
+
+
+
+
+}
