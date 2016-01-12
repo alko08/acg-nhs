@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ad4adcdf8eb6ff2b3b4fe9f1d676f099db621d60">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-33a5ceb4a864fc627a5110f5363a3d9ee84d1e9c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="55ecd0b0517650a2cffd06137a40de8af3bbbde3">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-1c1873fd2528ff14e22982917131fb090e04866f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-5c629506821114df000fa7a346fe6cfa23d3dba5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-711df2721898a59058c45fa1947b52b7f0d96203.jar" />
+    </item>
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-a290f08c941c5426b0d083c937348f6596504cf8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
+        <dex dex="C:\Users\Davis\Documents\GitHub\resq-bot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-48a1f29053a4017f1be63ce4a889b02751a5d994.jar" />
+    </item>
+
+</items>
