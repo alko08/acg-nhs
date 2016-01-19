@@ -64,7 +64,7 @@ public class
      * Code to run when the op mode is first enabled goes here
      *
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
-     */
+     *///motorRight1.setPower(0f);
     @Override
     public void init() {
 		/*
@@ -112,23 +112,23 @@ public class
 
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
-        float left = -gamepad1.left_stick_y;
-        float right = -gamepad1.right_stick_y;
+        //float left = -gamepad1.left_stick_y;
+       // float right = -gamepad1.right_stick_y;
 
         // clip the right/left values so that the values never exceed +/- 1
-        right = Range.clip(right, -1, 1);
-        left = Range.clip(left, -1, 1);
+      //  right = Range.clip(right, -1, 1);
+      //  left = Range.clip(left, -1, 1);
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        right = (float)scaleInput(right);
-        left =  (float)scaleInput(left);
+     //   right = (float)scaleInput(right);
+      //  left =  (float)scaleInput(left);
 
         // write the values to the motors
-        motorRight.setPower(right);
-        motorLeft.setPower(left);
-        motorRight1.setPower(right);
-        motorLeft1.setPower(left);
+     //   motorRight.setPower(right);
+      //  motorLeft.setPower(left);
+     //   motorRight1.setPower(right);
+     //   motorLeft1.setPower(left);
 
 
         //Motor Right = motor 1
@@ -137,81 +137,23 @@ public class
         //Motor Left1= motor 4
 
         // stop robot
-        if (gamepad1.a) {
-            motorRight.setPower(0f);
-            motorLeft.setPower(0f);
-            motorRight1.setPower(0f);
-            motorLeft1.setPower(0f);
-        }
-
-        // turning
-        if (gamepad1.left_bumper) {
-            motorRight.setPower(.7f);
-            motorLeft.setPower(-.7f);
-            motorRight1.setPower(.7f);
-            motorLeft1.setPower(-.7f);
-        }
-
         if (gamepad1.right_bumper) {
-            motorLeft.setPower(.7f);
-            motorRight.setPower(-.7f);
-            motorLeft1.setPower(.7f);
+            motorRight.setPower(.7f);
             motorRight1.setPower(-.7f);
         }
 
-        if (gamepad1.right_bumper && gamepad1.left_bumper)
-            motorLeft.setPower(1f);
-        motorRight.setPower(1f);
-        motorLeft1.setPower(1f);
-        motorRight1.setPower(1f);
-
-        //driving can be done using both bumpers or triggers, users choice. #triggered
-        //Driving
-
-        if (gamepad1.left_trigger > 0.25 && gamepad1.right_trigger > 0.25) {
-            motorRight.setPower(-.7f);
+        else if (gamepad1.left_bumper) {
             motorLeft.setPower(-.7f);
-            motorRight1.setPower(-.7f);
-            motorLeft1.setPower(-.7f);
+            motorLeft1.setPower(.7f);
         }
 
-        if (gamepad1.right_trigger > .25)
-            motorLeft.setPower(.7f);
-        motorRight.setPower(.7f);
-        motorLeft1.setPower(.7f);
-        motorRight1.setPower(.7f);
-
-        // intricate steering for accuracy
-        if (gamepad1.b) {
-            motorLeft.setPower(-.3f);
-            motorRight.setPower(-.3f);
-            motorLeft1.setPower(-.3f);
-            motorRight1.setPower(-.3f);
-        }
-
-        if (gamepad1.x) {
-            motorLeft.setPower(.3f);
-            motorRight.setPower(.3f);
-            motorLeft1.setPower(.3f);
-            motorRight1.setPower(.3f);
-
-        }
-
-        if (gamepad1.y) {
-            motorRight.setPower(1f);
-            motorLeft.setPower(1f);
-            motorRight1.setPower(1f);
-            motorLeft1.setPower(1f);
-
-        }
-
-        else {
+        /*else
+        {
             motorRight.setPower(0f);
             motorLeft.setPower(0f);
             motorRight1.setPower(0f);
             motorLeft1.setPower(0f);
-        }
-
+        }*/
 
 		/*
 		 * Send telemetry data back to driver station. Note that if we are using
@@ -221,8 +163,8 @@ public class
 		 */
 
         telemetry.addData("Text", "*** Robot Data***");
-        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
-        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
+        //telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
+        //telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
     }
 
 
