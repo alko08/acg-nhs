@@ -42,7 +42,8 @@ import com.qualcomm.robotcore.util.Range;
  * <p></p>
  * Enables control of the robot via the gamepad
  */
-public class gaiaBot extends OpMode {
+public class
+        gaiaBot extends OpMode {
 
     DcMotor motorRight;
     DcMotor motorLeft;
@@ -182,17 +183,17 @@ public class gaiaBot extends OpMode {
 
         // intricate steering for accuracy
         if (gamepad1.b) {
-            motorLeft.setPower(-.1f);
-            motorRight.setPower(-.1f);
-            motorLeft1.setPower(-.1f);
-            motorRight1.setPower(-.1f);
+            motorLeft.setPower(-.3f);
+            motorRight.setPower(-.3f);
+            motorLeft1.setPower(-.3f);
+            motorRight1.setPower(-.3f);
         }
 
         if (gamepad1.x) {
-            motorLeft.setPower(.1f);
-            motorRight.setPower(.1f);
-            motorLeft1.setPower(.1f);
-            motorRight1.setPower(.1f);
+            motorLeft.setPower(.3f);
+            motorRight.setPower(.3f);
+            motorLeft1.setPower(.3f);
+            motorRight1.setPower(.3f);
 
         }
 
@@ -202,6 +203,13 @@ public class gaiaBot extends OpMode {
             motorRight1.setPower(1f);
             motorLeft1.setPower(1f);
 
+        }
+
+        else {
+            motorRight.setPower(0f);
+            motorLeft.setPower(0f);
+            motorRight1.setPower(0f);
+            motorLeft1.setPower(0f);
         }
 
 
