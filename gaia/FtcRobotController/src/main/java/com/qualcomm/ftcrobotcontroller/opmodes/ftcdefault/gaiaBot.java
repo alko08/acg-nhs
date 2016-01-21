@@ -113,7 +113,7 @@ public class
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
         float left = -gamepad1.left_stick_y;
-        float right = -gamepad1.right_stick_y;
+        float right = gamepad1.right_stick_y;
 
         // clip the right/left values so that the values never exceed +/- 1
         right = Range.clip(right, -1, 1);
@@ -121,8 +121,8 @@ public class
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        right = (float)scaleInput(right);
-        left =  (float)scaleInput(left);
+        //right = (float)scaleInput(right);
+        //left =  (float)scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
@@ -154,8 +154,8 @@ public class
 		 */
 
         telemetry.addData("Text", "*** Robot Data***");
-        //telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
-        //telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
+        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
+        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
     }
 
 
