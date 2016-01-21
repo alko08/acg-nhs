@@ -112,23 +112,23 @@ public class
 
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
-        //float left = -gamepad1.left_stick_y;
-       // float right = -gamepad1.right_stick_y;
+        float left = -gamepad1.left_stick_y;
+        float right = -gamepad1.right_stick_y;
 
         // clip the right/left values so that the values never exceed +/- 1
-      //  right = Range.clip(right, -1, 1);
-      //  left = Range.clip(left, -1, 1);
+        right = Range.clip(right, -1, 1);
+        left = Range.clip(left, -1, 1);
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-     //   right = (float)scaleInput(right);
-      //  left =  (float)scaleInput(left);
+        right = (float)scaleInput(right);
+        left =  (float)scaleInput(left);
 
         // write the values to the motors
-     //   motorRight.setPower(right);
-      //  motorLeft.setPower(left);
-     //   motorRight1.setPower(right);
-     //   motorLeft1.setPower(left);
+        motorRight.setPower(right);
+        motorLeft.setPower(left);
+        motorRight1.setPower(right);
+        motorLeft1.setPower(left);
 
 
         //Motor Right = motor 1
@@ -137,15 +137,6 @@ public class
         //Motor Left1= motor 4
 
         // stop robot
-        if (gamepad1.right_bumper) {
-            motorRight.setPower(.7f);
-            motorRight1.setPower(-.7f);
-        }
-
-        else if (gamepad1.left_bumper) {
-            motorLeft.setPower(-.7f);
-            motorLeft1.setPower(.7f);
-        }
 
         /*else
         {
