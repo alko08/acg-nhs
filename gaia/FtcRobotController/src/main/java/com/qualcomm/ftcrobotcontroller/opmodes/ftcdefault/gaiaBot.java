@@ -121,8 +121,8 @@ public class
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        //right = (float)scaleInput(right);
-        //left =  (float)scaleInput(left);
+        right = (float)scaleInput(right);
+        left =  (float)scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
@@ -181,8 +181,8 @@ public class
      * the robot more precisely at slower speeds.
      */
     double scaleInput(double dVal)  {
-        double[] scaleArray = { 0.0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00,
-                0.00, 0.00, 0.45, 0.50, 0.60, 0.72, 1.00, 1.00, 1.00 };
+        double[] scaleArray = { 0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
+                0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
 
         // get the corresponding index for the scaleInput array.
         int index = (int) (dVal * 16.0);
