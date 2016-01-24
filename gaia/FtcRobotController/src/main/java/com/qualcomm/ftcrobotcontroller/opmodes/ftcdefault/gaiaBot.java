@@ -42,14 +42,13 @@ import com.qualcomm.robotcore.util.Range;
  * <p></p>
  * Enables control of the robot via the gamepad
  */
-public class
-        gaiaBot extends OpMode {
+public class gaiaBot extends OpMode {
 
     DcMotor motorRight;
     DcMotor motorLeft;
     DcMotor motorRight1;
     DcMotor motorLeft1;
-    
+
 
 
 
@@ -112,8 +111,8 @@ public class
 
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
-        float left = -gamepad1.left_stick_y;
-        float right = -gamepad1.right_stick_y;
+        float left = -(gamepad1.left_stick_y);
+        float right = -(gamepad1.right_stick_y);
 
         // clip the right/left values so that the values never exceed +/- 1
         right = Range.clip(right, -1, 1);
