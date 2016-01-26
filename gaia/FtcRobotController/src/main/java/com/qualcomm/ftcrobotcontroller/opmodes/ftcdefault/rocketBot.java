@@ -31,6 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes.ftcdefault;
 
+import android.graphics.Path;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 //import com.qualcomm.robotcore.hardware.Servo;
@@ -42,7 +44,7 @@ import com.qualcomm.robotcore.util.Range;
  * <p></p>
  * Enables control of the robot via the gamepad
  */
-public class gaiaBot extends OpMode {
+public class rocketBot extends OpMode {
 
     DcMotor motorRight;
     DcMotor motorLeft;
@@ -55,7 +57,7 @@ public class gaiaBot extends OpMode {
     /**
      * Constructor
      */
-    public gaiaBot() {
+    public rocketBot() {
 
     }
 
@@ -71,7 +73,7 @@ public class gaiaBot extends OpMode {
 		 * that the names of the devices must match the names used when you
 		 * configured your robot and created the configuration file.
 		 */
-		
+
 		/*
 		 * For the demo Tetrix K9 bot we assume the following,
 		 *   There are four motors: "motor_1", "motor_2", "motor_3", and "motor_4".
@@ -79,7 +81,7 @@ public class gaiaBot extends OpMode {
 		 *   "motor_2" is on the front right side of the bot.
 		 *   "motor_3" is on the back left side of the bot.
 		 *   "motor_4" is on the back right side of the bot.
-		 *   
+		 *
 		 * We don't assume we have any servos on the test bot, but it could happen.
 		 *    "servo_1" would control the arm joint of the manipulator.
 		 *    "servo_6" would control the claw joint of the manipulator.
@@ -88,7 +90,6 @@ public class gaiaBot extends OpMode {
         motorLeft = hardwareMap.dcMotor.get("m2");
         motorRight1 = hardwareMap.dcMotor.get("m3");
         motorLeft1 = hardwareMap.dcMotor.get("m4");
-
         motorRight.setDirection(DcMotor.Direction.REVERSE);
         motorRight1.setDirection(DcMotor.Direction.REVERSE);
     }
@@ -96,7 +97,8 @@ public class gaiaBot extends OpMode {
     /*
      * This method will be called repeatedly in a loop
      *
-     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#run()
+     * @see com.qualcomm.robo
+        motorRight.setDirectcore.eventloop.opmode.OpMode#run()
      */
     @Override
     public void loop() {
@@ -120,8 +122,8 @@ public class gaiaBot extends OpMode {
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        right = (float)scaleInput(right);
-        left =  (float)scaleInput(left);
+        //right = (float)scaleInput(right);
+        //left =  (float)scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
@@ -152,9 +154,11 @@ public class gaiaBot extends OpMode {
 		 * are currently write only.
 		 */
 
-        telemetry.addData("Text", "*** Robot Data***");
-        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
-        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
+        telemetry.addData("Rocky the Rocket is Ready to Go!", "*** Robot Data***");
+        telemetry.addData("left thruster pwr",  "left  pwr: " + String.format("%.2f", left));
+        telemetry.addData("right thruster pwr", "right pwr: " + String.format("%.2f", right));
+
+
     }
 
 
@@ -179,7 +183,7 @@ public class gaiaBot extends OpMode {
      * scaled value is less than linear.  This is to make it easier to drive
      * the robot more precisely at slower speeds.
      */
-    double scaleInput(double dVal)  {
+    /* double scaleInput(double dVal)  {
         double[] scaleArray = { 0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
                 0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
 
@@ -207,5 +211,6 @@ public class gaiaBot extends OpMode {
         // return scaled value.
         return dScale;
     }
-
+*/
 }
+
