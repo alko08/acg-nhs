@@ -31,8 +31,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes.ftcdefault;
 
-import android.graphics.Path;
-
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 //import com.qualcomm.robotcore.hardware.Servo;
@@ -41,7 +39,7 @@ import com.qualcomm.robotcore.util.Range;
 
 /**
  * TeleOp Mode
- * <p></p>
+ * <p>
  * Enables control of the robot via the gamepad
  */
 public class rocketBot extends OpMode {
@@ -65,7 +63,7 @@ public class rocketBot extends OpMode {
      * Code to run when the op mode is first enabled goes here
      *
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
-     *///motorRight1.setPower(0f);
+     */
     @Override
     public void init() {
 		/*
@@ -86,23 +84,22 @@ public class rocketBot extends OpMode {
 		 *    "servo_1" would control the arm joint of the manipulator.
 		 *    "servo_6" would control the claw joint of the manipulator.
 		 */
-        motorRight = hardwareMap.dcMotor.get("m1");
-        motorLeft = hardwareMap.dcMotor.get("m2");
-        motorRight1 = hardwareMap.dcMotor.get("m3");
-        motorLeft1 = hardwareMap.dcMotor.get("m4");
-        motorRight.setDirection(DcMotor.Direction.REVERSE);
-        motorRight1.setDirection(DcMotor.Direction.REVERSE);
+        motorRight = hardwareMap.dcMotor.get("motor_1");
+        motorLeft = hardwareMap.dcMotor.get("motor_2");
+        motorRight1 = hardwareMap.dcMotor.get("motor_3");
+        motorLeft1 = hardwareMap.dcMotor.get("motor_4");
+
+
+
     }
 
     /*
      * This method will be called repeatedly in a loop
      *
-     * @see com.qualcomm.robo
-        motorRight.setDirectcore.eventloop.opmode.OpMode#run()
+     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#run()
      */
     @Override
     public void loop() {
-
 
 		/*
 		 * Gamepad 1
@@ -113,8 +110,8 @@ public class rocketBot extends OpMode {
 
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
-        float left = -(gamepad1.left_stick_y);
-        float right = -(gamepad1.right_stick_y);
+        float left = -gamepad1.left_stick_y;
+        float right = -gamepad1.right_stick_y;
 
         // clip the right/left values so that the values never exceed +/- 1
         right = Range.clip(right, -1, 1);
@@ -122,8 +119,8 @@ public class rocketBot extends OpMode {
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        //right = (float)scaleInput(right);
-        //left =  (float)scaleInput(left);
+        right = (float)scaleInput(right);
+        left =  (float)scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
@@ -138,14 +135,74 @@ public class rocketBot extends OpMode {
         //Motor Left1= motor 4
 
         // stop robot
-
-        /*else
-        {
+        if (gamepad1.a) {
             motorRight.setPower(0f);
             motorLeft.setPower(0f);
             motorRight1.setPower(0f);
             motorLeft1.setPower(0f);
-        }*/
+        }
+
+        // turning
+        if (gamepad1.left_bumper) {
+            motorRight.setPower(.7f);
+            motorLeft.setPower(-.7f);
+            motorRight1.setPower(.7f);
+            motorLeft1.setPower(-.7f);
+        }
+
+        if (gamepad1.right_bumper) {
+            motorLeft.setPower(.7f);
+            motorRight.setPower(-.7f);
+            motorLeft1.setPower(.7f);
+            motorRight1.setPower(-.7f);
+        }
+
+        if (gamepad1.right_bumper && gamepad1.left_bumper)
+            motorLeft.setPower(1f);
+        motorRight.setPower(1f);
+        motorLeft1.setPower(1f);
+        motorRight1.setPower(1f);
+
+        //driving can be done using both bumpers or triggers, users choice. #triggered
+        //Driving
+
+        if (gamepad1.left_trigger > 0.25 && gamepad1.right_trigger > 0.25) {
+            motorRight.setPower(-.7f);
+            motorLeft.setPower(-.7f);
+            motorRight1.setPower(-.7f);
+            motorLeft1.setPower(-.7f);
+        }
+
+        if (gamepad1.right_trigger > .25)
+            motorLeft.setPower(.7f);
+        motorRight.setPower(.7f);
+        motorLeft1.setPower(.7f);
+        motorRight1.setPower(.7f);
+
+        // intricate steering for accuracy
+        if (gamepad1.b) {
+            motorLeft.setPower(-.1f);
+            motorRight.setPower(-.1f);
+            motorLeft1.setPower(-.1f);
+            motorRight1.setPower(-.1f);
+        }
+
+        if (gamepad1.x) {
+            motorLeft.setPower(.1f);
+            motorRight.setPower(.1f);
+            motorLeft1.setPower(.1f);
+            motorRight1.setPower(.1f);
+
+        }
+
+        if (gamepad1.y) {
+            motorRight.setPower(1f);
+            motorLeft.setPower(1f);
+            motorRight1.setPower(1f);
+            motorLeft1.setPower(1f);
+
+        }
+
 
 		/*
 		 * Send telemetry data back to driver station. Note that if we are using
@@ -154,23 +211,10 @@ public class rocketBot extends OpMode {
 		 * are currently write only.
 		 */
 
-        telemetry.addData("Rocky the Rocket is Ready to Go!", "*** Robot Data***");
-        telemetry.addData("left thruster pwr",  "left  pwr: " + String.format("%.2f", left));
-        telemetry.addData("right thruster pwr", "right pwr: " + String.format("%.2f", right));
-
-
+        telemetry.addData("Text", "*** Robot Data***");
+        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
+        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
     }
-
-
-
-		/*
-		 * Send telemetry data back to driver station. Note that if we are using
-		 * a legacy NXT-compatible motor controller, then the getPower() method
-		 * will return a null value. The legacy NXT-compatible motor controllers
-		 * are currently write only.
-		 */
-
-
 
 
     @Override
@@ -183,7 +227,7 @@ public class rocketBot extends OpMode {
      * scaled value is less than linear.  This is to make it easier to drive
      * the robot more precisely at slower speeds.
      */
-    /* double scaleInput(double dVal)  {
+    double scaleInput(double dVal)  {
         double[] scaleArray = { 0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
                 0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
 
@@ -211,6 +255,5 @@ public class rocketBot extends OpMode {
         // return scaled value.
         return dScale;
     }
-*/
-}
 
+}
