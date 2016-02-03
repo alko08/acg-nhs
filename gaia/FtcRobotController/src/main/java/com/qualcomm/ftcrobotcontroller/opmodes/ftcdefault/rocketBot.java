@@ -159,9 +159,9 @@ public class rocketBot extends OpMode {
 
         if (gamepad1.right_bumper && gamepad1.left_bumper)
             motorLeft.setPower(1f);
-        motorRight.setPower(1f);
-        motorLeft1.setPower(1f);
-        motorRight1.setPower(1f);
+            motorRight.setPower(1f);
+            motorLeft1.setPower(1f);
+            motorRight1.setPower(1f);
 
         //driving can be done using both bumpers or triggers, users choice. #triggered
         //Driving
@@ -175,9 +175,9 @@ public class rocketBot extends OpMode {
 
         if (gamepad1.right_trigger > .25)
             motorLeft.setPower(.7f);
-        motorRight.setPower(.7f);
-        motorLeft1.setPower(.7f);
-        motorRight1.setPower(.7f);
+            motorRight.setPower(.7f);
+            motorLeft1.setPower(.7f);
+            motorRight1.setPower(.7f);
 
         // intricate steering for accuracy
         if (gamepad1.b) {
