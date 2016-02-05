@@ -2,46 +2,25 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-17800fb89dec9211f5f751f9c79ba35e4f6ec2e9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-901a4f83efe8de2783b8f9bdf1d0b8cb737bca5f.jar" />
-    </item>
-    <item
         jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="55ecd0b0517650a2cffd06137a40de8af3bbbde3">
+        sha1="1e813cd0f3937ee1d0b272907ce672b7f4ad2ea2">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-6d80ce6fcbfa7447ac50f9d41f4e073fa8dbb203.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81c82e1248666e3dba585aa2044cb6f367ec6066">
+        <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-17800fb89dec9211f5f751f9c79ba35e4f6ec2e9.jar" />
     </item>
     <item
         jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
+        sha1="141c9410c57da655ddebd85f577cc6b51811c525">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-8a9b6dd1900ef60923f95b6c74a423b2dc65a1ae.jar" />
-    </item>
-    <item
-        jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-5a19f7462697eb6946f80085c05413336917c85f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ad4adcdf8eb6ff2b3b4fe9f1d676f099db621d60">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\gaia\FtcRobotController\build\intermediates\pre-dexed\debug\classes-ad3bb1ad472da1c1d45d9950189beace18a13963.jar" />
     </item>
 
 </items>

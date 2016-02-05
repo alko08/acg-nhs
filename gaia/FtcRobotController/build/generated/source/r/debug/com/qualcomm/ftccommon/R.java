@@ -66,13 +66,13 @@ public final class R {
 		public static final int controller_name = 0x7f0b00a4;
 		public static final int controller_name_text = 0x7f0b007c;
 		public static final int controllers = 0x7f0b0068;
-		public static final int controllersList = 0x7f0b000e;
+		public static final int controllersList = 0x7f0b000f;
 		public static final int device_interface_module_cancelButton = 0x7f0b004c;
 		public static final int device_interface_module_name = 0x7f0b004d;
 		public static final int device_interface_module_saveButton = 0x7f0b004b;
 		public static final int device_interface_module_serialNumber = 0x7f0b004e;
-		public static final int devices_holder = 0x7f0b000c;
-		public static final int devices_info_btn = 0x7f0b000d;
+		public static final int devices_holder = 0x7f0b000d;
+		public static final int devices_info_btn = 0x7f0b000e;
 		public static final int digital_devices_cancelButton = 0x7f0b0056;
 		public static final int digital_devices_saveButton = 0x7f0b0055;
 		public static final int dropdown_layout = 0x7f0b00c9;
@@ -87,7 +87,7 @@ public final class R {
 		public static final int editTextResult_pwm = 0x7f0b00b4;
 		public static final int editTextResult_servo = 0x7f0b00bb;
 		public static final int edit_controller_btn = 0x7f0b00cc;
-		public static final int empty_devicelist = 0x7f0b000f;
+		public static final int empty_devicelist = 0x7f0b0010;
 		public static final int empty_filelist = 0x7f0b0029;
 		public static final int file_activate_button = 0x7f0b0066;
 		public static final int file_buttons = 0x7f0b0061;
@@ -97,7 +97,7 @@ public final class R {
 		public static final int filename_editText = 0x7f0b0063;
 		public static final int files_holder = 0x7f0b0027;
 		public static final int header = 0x7f0b0069;
-		public static final int holdsDevices = 0x7f0b0007;
+		public static final int holdsDevices = 0x7f0b0008;
 		public static final int holds_buttons = 0x7f0b0025;
 		public static final int horizontalButtons = 0x7f0b0064;
 		public static final int i2c_devices_cancelButton = 0x7f0b0072;
@@ -196,11 +196,11 @@ public final class R {
 		public static final int row_port_matrix = 0x7f0b009d;
 		public static final int row_port_pwm = 0x7f0b00b1;
 		public static final int row_port_servo = 0x7f0b00b8;
-		public static final int save_config_btn = 0x7f0b0012;
-		public static final int save_holder = 0x7f0b0010;
-		public static final int scanButton = 0x7f0b0009;
-		public static final int scanButton_text = 0x7f0b000a;
-		public static final int scan_bottom = 0x7f0b0008;
+		public static final int save_config_btn = 0x7f0b0013;
+		public static final int save_holder = 0x7f0b0011;
+		public static final int scanButton = 0x7f0b000a;
+		public static final int scanButton_text = 0x7f0b000b;
+		public static final int scan_bottom = 0x7f0b0009;
 		public static final int scrollView = 0x7f0b002c;
 		public static final int servo_controller_cancelButton = 0x7f0b00be;
 		public static final int servo_controller_saveButton = 0x7f0b00bd;
@@ -216,7 +216,8 @@ public final class R {
 		public static final int tableLayout_pwm_devices = 0x7f0b007d;
 		public static final int table_header = 0x7f0b0036;
 		public static final int textAdbLogs = 0x7f0b002d;
-		public static final int textView = 0x7f0b0006;
+		public static final int textBadDeviceName = 0x7f0b0007;
+		public static final int textPleaseWait = 0x7f0b0006;
 		public static final int textView1 = 0x7f0b006a;
 		public static final int titleTextView_analogInput = 0x7f0b0032;
 		public static final int titleTextView_analogInput7 = 0x7f0b00aa;
@@ -227,9 +228,9 @@ public final class R {
 		public static final int titleTextView_motor2 = 0x7f0b00ad;
 		public static final int titleTextView_pwm = 0x7f0b00b5;
 		public static final int titleTextView_servo = 0x7f0b00bc;
-		public static final int warning_layout = 0x7f0b000b;
-		public static final int writeXML = 0x7f0b0011;
-		public static final int writeXML_text = 0x7f0b0013;
+		public static final int warning_layout = 0x7f0b000c;
+		public static final int writeXML = 0x7f0b0012;
+		public static final int writeXML_text = 0x7f0b0014;
 	}
 	public static final class layout {
 		public static final int activity_about = 0x7f030000;
@@ -364,9 +365,10 @@ public final class R {
 		public static final int title_activity_load = 0x7f090068;
 		public static final int title_activity_wifi_channel_selector = 0x7f09006a;
 		public static final int view_logs_activity = 0x7f09006b;
-		public static final int wifi_direct_update_settings = 0x7f09006d;
-		public static final int writeXML_prompt = 0x7f09006e;
-		public static final int writeXML_text = 0x7f09006f;
+		public static final int wifi_direct_bad_device_name = 0x7f09006d;
+		public static final int wifi_direct_update_settings = 0x7f09006e;
+		public static final int writeXML_prompt = 0x7f09006f;
+		public static final int writeXML_text = 0x7f090070;
 	}
 	public static final class style {
 		public static final int AppBaseTheme = 0x7f060000;

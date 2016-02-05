@@ -84,10 +84,10 @@ public class rocketBot extends OpMode {
 		 *    "servo_1" would control the arm joint of the manipulator.
 		 *    "servo_6" would control the claw joint of the manipulator.
 		 */
-        motorRight = hardwareMap.dcMotor.get("motor_1");
-        motorLeft = hardwareMap.dcMotor.get("motor_2");
-        motorRight1 = hardwareMap.dcMotor.get("motor_3");
-        motorLeft1 = hardwareMap.dcMotor.get("motor_4");
+        motorRight = hardwareMap.dcMotor.get("m1");
+        motorLeft = hardwareMap.dcMotor.get("m2");
+        motorRight1 = hardwareMap.dcMotor.get("m1");
+        motorLeft1 = hardwareMap.dcMotor.get("m2");
 
 
 
@@ -110,7 +110,7 @@ public class rocketBot extends OpMode {
 
         // here we are mimicking a tank drive
         // note that if y equal -1 then joystick is pushed all of the way forward.
-        float left = -gamepad1.left_stick_y;
+        float left = gamepad1.left_stick_y;
         float right = -gamepad1.right_stick_y;
 
         // clip the right/left values so that the values never exceed +/- 1
@@ -119,14 +119,13 @@ public class rocketBot extends OpMode {
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        right = (float)scaleInput(right);
-        left =  (float)scaleInput(left);
+        //right = (float)scaleInput(right);
+        //left =  (float)scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
         motorLeft.setPower(left);
-        motorRight1.setPower(right);
-        motorLeft1.setPower(left);
+
 
 
         //Motor Right = motor 1
@@ -135,7 +134,7 @@ public class rocketBot extends OpMode {
         //Motor Left1= motor 4
 
         // stop robot
-        if (gamepad1.a) {
+       /* if (gamepad1.a) {
             motorRight.setPower(0f);
             motorLeft.setPower(0f);
             motorRight1.setPower(0f);
@@ -228,7 +227,7 @@ public class rocketBot extends OpMode {
      * the robot more precisely at slower speeds.
      */
     double scaleInput(double dVal)  {
-        double[] scaleArray = { 0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
+        double[] scaleArray = { 0.0, 0.24,
                 0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
 
         // get the corresponding index for the scaleInput array.
