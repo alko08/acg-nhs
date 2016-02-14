@@ -57,5 +57,6 @@ public class FtcOpModeRegister implements OpModeRegister {
      * If two or more op modes are registered with the same name, the app will display an error.
      */
     manager.register("Gaia", rocketBot.class);
+    manager.register("test", K9TankDrive.class);
   }
 }

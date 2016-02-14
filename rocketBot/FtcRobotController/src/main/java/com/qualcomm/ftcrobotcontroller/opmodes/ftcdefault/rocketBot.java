@@ -46,9 +46,6 @@ public class rocketBot extends OpMode {
 
     DcMotor motorRight;
     DcMotor motorLeft;
-    DcMotor motorRight1;
-    DcMotor motorLeft1;
-
 
 
 
@@ -86,9 +83,6 @@ public class rocketBot extends OpMode {
 		 */
         motorRight = hardwareMap.dcMotor.get("m1");
         motorLeft = hardwareMap.dcMotor.get("m2");
-        motorRight1 = hardwareMap.dcMotor.get("m1");
-        motorLeft1 = hardwareMap.dcMotor.get("m2");
-
 
 
     }
@@ -119,88 +113,13 @@ public class rocketBot extends OpMode {
 
         // scale the joystick value to make it easier to control
         // the robot more precisely at slower speeds.
-        //right = (float)scaleInput(right);
-        //left =  (float)scaleInput(left);
+        right = (float) scaleInput(right);
+        left = (float) scaleInput(left);
 
         // write the values to the motors
         motorRight.setPower(right);
         motorLeft.setPower(left);
 
-
-
-        //Motor Right = motor 1
-        //Motor Left= motor2
-        //Motor Right1= motor 3
-        //Motor Left1= motor 4
-
-        // stop robot
-       /* if (gamepad1.a) {
-            motorRight.setPower(0f);
-            motorLeft.setPower(0f);
-            motorRight1.setPower(0f);
-            motorLeft1.setPower(0f);
-        }
-
-        // turning
-        if (gamepad1.left_bumper) {
-            motorRight.setPower(.7f);
-            motorLeft.setPower(-.7f);
-            motorRight1.setPower(.7f);
-            motorLeft1.setPower(-.7f);
-        }
-
-        if (gamepad1.right_bumper) {
-            motorLeft.setPower(.7f);
-            motorRight.setPower(-.7f);
-            motorLeft1.setPower(.7f);
-            motorRight1.setPower(-.7f);
-        }
-
-        if (gamepad1.right_bumper && gamepad1.left_bumper)
-            motorLeft.setPower(1f);
-            motorRight.setPower(1f);
-            motorLeft1.setPower(1f);
-            motorRight1.setPower(1f);
-
-        //driving can be done using both bumpers or triggers, users choice. #triggered
-        //Driving
-
-        if (gamepad1.left_trigger > 0.25 && gamepad1.right_trigger > 0.25) {
-            motorRight.setPower(-.7f);
-            motorLeft.setPower(-.7f);
-            motorRight1.setPower(-.7f);
-            motorLeft1.setPower(-.7f);
-        }
-
-        if (gamepad1.right_trigger > .25)
-            motorLeft.setPower(.7f);
-            motorRight.setPower(.7f);
-            motorLeft1.setPower(.7f);
-            motorRight1.setPower(.7f);
-
-        // intricate steering for accuracy
-        if (gamepad1.b) {
-            motorLeft.setPower(-.1f);
-            motorRight.setPower(-.1f);
-            motorLeft1.setPower(-.1f);
-            motorRight1.setPower(-.1f);
-        }
-
-        if (gamepad1.x) {
-            motorLeft.setPower(.1f);
-            motorRight.setPower(.1f);
-            motorLeft1.setPower(.1f);
-            motorRight1.setPower(.1f);
-
-        }
-
-        if (gamepad1.y) {
-            motorRight.setPower(1f);
-            motorLeft.setPower(1f);
-            motorRight1.setPower(1f);
-            motorLeft1.setPower(1f);
-
-        }
 
 
 		/*
@@ -211,7 +130,7 @@ public class rocketBot extends OpMode {
 		 */
 
         telemetry.addData("Text", "*** Robot Data***");
-        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
+        telemetry.addData("left tgt pwr", "left  pwr: " + String.format("%.2f", left));
         telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
     }
 
@@ -226,17 +145,20 @@ public class rocketBot extends OpMode {
      * scaled value is less than linear.  This is to make it easier to drive
      * the robot more precisely at slower speeds.
      */
-    double scaleInput(double dVal)  {
-        double[] scaleArray = { 0.0, 0.24,
-                0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00 };
+    double scaleInput(double dVal) {
+        /*
+         * This method scales the joystick input so for low joystick values, the
+      * scaled value is less than linear.  This is to make it easier to drive
+      * the robot more precisely at slower speeds.
+      */
+        double[] scaleArray = {0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
+                0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00};
 
         // get the corresponding index for the scaleInput array.
         int index = (int) (dVal * 16.0);
 
         // index should be positive.
-        if (index < 0) {
-            index = -index;
-        }
+        index = Math.abs(index);
 
         // index cannot exceed size of array minus 1.
         if (index > 16) {
@@ -254,5 +176,4 @@ public class rocketBot extends OpMode {
         // return scaled value.
         return dScale;
     }
-
 }
