@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'toz'
+            keyPassword 'toztoztoz'
+            storeFile file('C:/Users/Tyler/keystore.jks')
+            storePassword 'toztoztoz'
+        }
+    }
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 19

@@ -2,45 +2,45 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ad4adcdf8eb6ff2b3b4fe9f1d676f099db621d60">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-3bd362a817ad7dd6523aa5adc14fce829a694a8f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
-        <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-f7a496df5b915cdef0b7289cd4bd9fde8454c419.jar" />
-    </item>
-    <item
         jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1e813cd0f3937ee1d0b272907ce672b7f4ad2ea2">
+        sha1="5b3fe4efe8fad907294d5332bf26afe87764694f">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-8bee879c508a6ed700efd3e6918c1051d2b796b0.jar" />
     </item>
     <item
         jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
+        sha1="9dafed45e330aec14abcce05bdb7bbdb2a2d7092">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-edf03cf8c07ec5a4bec97f4be0d538380ed49b31.jar" />
     </item>
     <item
         jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81c82e1248666e3dba585aa2044cb6f367ec6066">
+        sha1="e19ebc3f612058d1ce56c27e0867f609eb73edfa">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-eb68af60cd96ff1aba88466425138776855aa5e7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9403be210676ed196cdcc64c7391b9ae2361c174">
+        <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-f7a496df5b915cdef0b7289cd4bd9fde8454c419.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01999c87afe3d10ffa06f3efa66f39e61e6aba0c">
+        <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-3bd362a817ad7dd6523aa5adc14fce829a694a8f.jar" />
     </item>
     <item
         jar="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="141c9410c57da655ddebd85f577cc6b51811c525">
+        sha1="0666d81ab6701ba68f81b170cbdb78ba434eb00b">
         <dex dex="C:\Users\Tyler\Code\acg-nhs\rocketBot\FtcRobotController\build\intermediates\pre-dexed\debug\classes-2b5fb1af0cfe93cf91209cd6265eed2bd08ee447.jar" />
     </item>
 
