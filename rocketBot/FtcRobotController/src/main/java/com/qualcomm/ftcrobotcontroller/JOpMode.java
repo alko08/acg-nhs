@@ -11,13 +11,16 @@ public class JOpMode extends OpMode {
 
     // Motors
     DcMotor leftMotorFront, rightMotorFront, leftMotorBack, rightMotorBack;
-    Servo camera;
+    Servo Hcamera, Vcamera;
 
     // Constant
-    final double WHEEL_SCALE_FACTOR = 1.8;
+    final double WHEEL_SCALE_FACTOR = 1.6;
+    double speedRight;
+    double speedLeft;
 
     //Tracker
-    double camTurnPosition = 0.5;
+    double HcamTurnPosition = 0.5;
+    double VcamTurnPosition = 0;
     double cameraMoveRate = 0.005;
 
 
@@ -27,29 +30,40 @@ public class JOpMode extends OpMode {
         leftMotorFront = hardwareMap.dcMotor.get("m1");
         rightMotorBack = hardwareMap.dcMotor.get("m3");
         leftMotorBack = hardwareMap.dcMotor.get("m4");
-        camera = hardwareMap.servo.get("camera");
-        telemetry.addData("Message 1", "Motors and servo declared! All Systems go!");
+        Hcamera = hardwareMap.servo.get("Hcamera");
+        Vcamera = hardwareMap.servo.get("Vcamera");
+
+        telemetry.addData("Message 1", "Motors and servos declared! All Systems go!");
     }
 
     @Override
     public void loop() {
-        // Wheels
-        leftMotorFront.setPower(gamepad1.left_stick_y / WHEEL_SCALE_FACTOR);
-        rightMotorFront.setPower(-gamepad1.right_stick_y / WHEEL_SCALE_FACTOR);
-        leftMotorBack.setPower(gamepad1.left_stick_y / WHEEL_SCALE_FACTOR);
-        rightMotorBack.setPower(-gamepad1.right_stick_y / WHEEL_SCALE_FACTOR);
+        //Wheels
+        speedRight = gamepad1.left_stick_y / WHEEL_SCALE_FACTOR;
+        speedLeft = -gamepad1.right_stick_y / WHEEL_SCALE_FACTOR;
+        leftMotorFront.setPower(speedLeft);
+        rightMotorFront.setPower(speedRight);
+        leftMotorBack.setPower(speedLeft);
+        rightMotorBack.setPower(speedRight);
 
-        //Servo
-        if (gamepad1.left_bumper) camTurnPosition = camTurnPosition + cameraMoveRate;
-        if (gamepad1.right_bumper) camTurnPosition = camTurnPosition - cameraMoveRate;
-        if (camTurnPosition > 1) camTurnPosition = 1;
-        if (camTurnPosition < 0) camTurnPosition = 0;
-        camera.setPosition(camTurnPosition);
+        //Horizontal Servo Control
+        if (gamepad1.left_bumper) HcamTurnPosition = HcamTurnPosition + cameraMoveRate;
+        if (gamepad1.right_bumper) HcamTurnPosition = HcamTurnPosition - cameraMoveRate;
+        if (HcamTurnPosition > 1) HcamTurnPosition = 1;
+        if (HcamTurnPosition < 0) HcamTurnPosition = 0;
+        Hcamera.setPosition(HcamTurnPosition);
+
+        //Vertical Servo Control
+        if (gamepad1.left_trigger > 0.85) VcamTurnPosition = VcamTurnPosition + cameraMoveRate;
+        if (gamepad1.right_trigger > 0.85) VcamTurnPosition = VcamTurnPosition - cameraMoveRate;
+        if (VcamTurnPosition > 1) VcamTurnPosition = 1;
+        if (VcamTurnPosition < 1) VcamTurnPosition = 0;
+        Vcamera.setPosition(VcamTurnPosition);
 
         //values of sticks displayed on phone
-        //telemetry.addData("Text", "*** Robot Data***");
-        //telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
-        //telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
+        telemetry.addData("Text", "*** Robot Data***");
+        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", speedLeft));
+        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", speedRight));
     }
 
 
