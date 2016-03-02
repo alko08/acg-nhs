@@ -47,9 +47,9 @@ public class JOpMode extends OpMode {
         camera.setPosition(camTurnPosition);
 
         //values of sticks displayed on phone
-        telemetry.addData("Text", "*** Robot Data***");
-        telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
-        telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
+        //telemetry.addData("Text", "*** Robot Data***");
+        //telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", left));
+        //telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", right));
     }
 
 
