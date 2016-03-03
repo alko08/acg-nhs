@@ -64,6 +64,10 @@ public class JOpMode extends OpMode {
         telemetry.addData("Text", "*** Robot Data***");
         telemetry.addData("left tgt pwr",  "left  pwr: " + String.format("%.2f", speedLeft));
         telemetry.addData("right tgt pwr", "right pwr: " + String.format("%.2f", speedRight));
+
+        //Values for servos displayed on phones
+        telemetry.addData("HcamTitle", "Position of Horizontal Servo:" + String.format("%.2f", HcamTurnPosition));
+        telemetry.addData("VcamTitle", "Position of Vertical Servo:" + String.format("%.2f", VcamTurnPosition));
     }
 
 
