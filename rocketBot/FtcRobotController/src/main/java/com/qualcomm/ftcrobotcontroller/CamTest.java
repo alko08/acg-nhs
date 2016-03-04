@@ -26,14 +26,15 @@ public class CamTest extends OpMode{
     }
 
     public void loop() {
-        //Keep positions of servos between 1 and -1
-        vCamTurnPosition = Range.clip(vCamTurnPosition, -1, 1);
-        hCamTurnPosition = Range.clip(hCamTurnPosition, -1, 1);
         //X axis controls hCam, Y axis controls vCam
         if (gamepad1.right_stick_y > 0.4) vCamTurnPosition = vCamTurnPosition + MoveRate;
         if (gamepad1.right_stick_y < -0.4) vCamTurnPosition = vCamTurnPosition - MoveRate;
         if (gamepad1.right_stick_x > 0.4) hCamTurnPosition = hCamTurnPosition + MoveRate;
         if (gamepad1.right_stick_x < -0.4) hCamTurnPosition = hCamTurnPosition - MoveRate;
+
+        //Keep positions of servos between 1 and -1
+        vCamTurnPosition = Range.clip(vCamTurnPosition, -1, 1);
+        hCamTurnPosition = Range.clip(hCamTurnPosition, -1, 1);
 
         //Write the values to the servos
 

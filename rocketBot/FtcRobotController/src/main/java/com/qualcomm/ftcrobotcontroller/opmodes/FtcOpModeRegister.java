@@ -31,6 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.ftcrobotcontroller.CamTest;
 import com.qualcomm.ftcrobotcontroller.JOpMode;
 import com.qualcomm.ftcrobotcontroller.OneStickTest;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
@@ -63,6 +64,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("RocketBot", RocketBot.class);
     manager.register("JOpMode", JOpMode.class);
     manager.register("1StickTest", OneStickTest.class);
+    manager.register("CamTest", CamTest.class);
 
 
 
