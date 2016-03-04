@@ -54,8 +54,5 @@ public class OneStickTest extends ResQ_Library {
         rightMotorBack.setPower(right);
 
 
-        // we're reversing it because we are redefining the front of the robot without actually changing anything hardware.
-
-
     }
 }
