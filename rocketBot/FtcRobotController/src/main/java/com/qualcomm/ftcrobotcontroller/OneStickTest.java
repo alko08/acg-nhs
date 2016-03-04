@@ -12,7 +12,7 @@ public class OneStickTest extends ResQ_Library {
     // Motors
     DcMotor leftMotorFront, rightMotorFront, leftMotorBack, rightMotorBack;
     // Constant
-    final double WHEEL_SCALE_FACTOR = 1.6;
+    double WHEEL_SCALE_FACTOR = 1.6;
     double X,Y,V,W,right,left;
 
 
@@ -27,9 +27,15 @@ public class OneStickTest extends ResQ_Library {
 
     }
     public void loop() {
+        if (gamepad1.dpad_down){
+            WHEEL_SCALE_FACTOR = 3.0;
+        }
+        if (gamepad1.dpad_up){
+            WHEEL_SCALE_FACTOR = 1.6;
+        }
         //1 Stick Drive Code from Resq_Teleop.java
-        X = (-gamepad1.left_stick_x / WHEEL_SCALE_FACTOR); //X is inverted with the negative sign
-        Y = (gamepad1.left_stick_y / WHEEL_SCALE_FACTOR); //NOT inverted
+        Y = -(gamepad1.left_stick_x / WHEEL_SCALE_FACTOR); //Y is inverted with the negative sign
+        X = (gamepad1.left_stick_y / WHEEL_SCALE_FACTOR); //NOT inverted
 
         V = (100-Math.abs(X)) * (Y/100) + Y; // R+L
         W = (100-Math.abs(Y)) * (X/100) + X; // R-L

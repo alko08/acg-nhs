@@ -14,12 +14,12 @@ public class JOpMode extends OpMode {
     Servo Hcamera, Vcamera;
 
     // Constant
-    final double WHEEL_SCALE_FACTOR = 1.6;
+    double WHEEL_SCALE_FACTOR = 1.6;
     double speedRight;
     double speedLeft;
 
     //Tracker
-    double HcamTurnPosition = 0.5;
+    double HcamTurnPosition = 0;
     double VcamTurnPosition = 0;
     double cameraMoveRate = 0.005;
 
@@ -39,8 +39,14 @@ public class JOpMode extends OpMode {
     @Override
     public void loop() {
         //Wheels
-        speedRight = gamepad1.left_stick_y / WHEEL_SCALE_FACTOR;
-        speedLeft = -gamepad1.right_stick_y / WHEEL_SCALE_FACTOR;
+        if (gamepad1.dpad_down){
+            WHEEL_SCALE_FACTOR = 3.0;
+        }
+        if (gamepad1.dpad_up){
+            WHEEL_SCALE_FACTOR = 1.6;
+        }
+        speedRight = -gamepad1.left_stick_y / WHEEL_SCALE_FACTOR;
+        speedLeft = gamepad1.right_stick_y / WHEEL_SCALE_FACTOR;
         leftMotorFront.setPower(speedLeft);
         rightMotorFront.setPower(speedRight);
         leftMotorBack.setPower(speedLeft);
