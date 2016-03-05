@@ -34,6 +34,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.ftcrobotcontroller.CamTest;
 import com.qualcomm.ftcrobotcontroller.JOpMode;
 import com.qualcomm.ftcrobotcontroller.OneStickTest;
+import com.qualcomm.ftcrobotcontroller.RockyV2;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
@@ -65,6 +66,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("JOpMode", JOpMode.class);
     manager.register("1StickTest", OneStickTest.class);
     manager.register("CamTest", CamTest.class);
+    manager.register("RockyV2", RockyV2.class);
 
 
 

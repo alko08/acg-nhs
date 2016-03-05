@@ -15,11 +15,11 @@ public class RockyV2 extends ResQ_Library{
     //Servos
     Servo vCam,hCam;
     //Values for virtual gearing
-    double WHEEL_SCALE_FACTOR = 1.6;
-    final double gearRate = 0.4;
+    double WHEEL_SCALE_FACTOR = 1.5;
+    final double gearRate = 0.5;
     //Initial Values for servos
-    double hCamTurnPosition = 0.5;
-    double vCamTurnPosition = 0.2; //EXPERIMENTAL VALUE
+    double hCamTurnPosition = 0.4;
+    double vCamTurnPosition = 0.77; //EXPERIMENTAL VALUE
     //Rate at which the servos move
     final double MoveRate = 0.005;
     //Variables for 1 stick drive
@@ -45,15 +45,16 @@ public class RockyV2 extends ResQ_Library{
     public void loop() {
         //Virtual Gearing
         //Keep gear number within range
-        if (gamepad1.dpad_down){
+        if (gamepad1.left_bumper){
             WHEEL_SCALE_FACTOR += gearRate;
         }
-        if (gamepad1.dpad_up){
+        if (gamepad1.right_bumper){
             WHEEL_SCALE_FACTOR -= gearRate;
         }
 
         //Keep values of scale factor within range
-        Range.clip(WHEEL_SCALE_FACTOR, 1, 3);
+        if (WHEEL_SCALE_FACTOR < 1) WHEEL_SCALE_FACTOR = 1;
+        if (WHEEL_SCALE_FACTOR > 3) WHEEL_SCALE_FACTOR = 3;
 
         //1 Stick Drive
         Y = -(gamepad1.left_stick_x / WHEEL_SCALE_FACTOR); //Y is inverted with the negative sign
@@ -80,9 +81,10 @@ public class RockyV2 extends ResQ_Library{
         if (gamepad1.right_stick_y < -0.4) vCamTurnPosition = vCamTurnPosition - MoveRate;
         if (gamepad1.right_stick_x > 0.4) hCamTurnPosition = hCamTurnPosition + MoveRate;
         if (gamepad1.right_stick_x < -0.4) hCamTurnPosition = hCamTurnPosition - MoveRate;
-        //Keep positions of servos between 1 and -1
-        vCamTurnPosition = Range.clip(vCamTurnPosition, -1, 1);
-        hCamTurnPosition = Range.clip(hCamTurnPosition, -1, 1);
+
+        //Keep positions of servos between 1 and 0
+        vCamTurnPosition = Range.clip(vCamTurnPosition, .41, 1);
+        hCamTurnPosition = Range.clip(hCamTurnPosition, 0, 1);
 
         //Write the values to the servos
 
@@ -92,6 +94,7 @@ public class RockyV2 extends ResQ_Library{
         //display positions of servos
         telemetry.addData("VcamSpot", "Vertical Camera Position: " + String.valueOf(vCamTurnPosition));
         telemetry.addData("hCamSpot", "Horizontal Camera Position: " + String.valueOf(hCamTurnPosition));
+        telemetry.addData("Gear", String.valueOf(WHEEL_SCALE_FACTOR));
 
     }
 }
