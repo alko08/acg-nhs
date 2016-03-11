@@ -31,9 +31,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.ftcrobotcontroller.CamTest;
-import com.qualcomm.ftcrobotcontroller.JOpMode;
-import com.qualcomm.ftcrobotcontroller.OneStickTest;
 import com.qualcomm.ftcrobotcontroller.RockyV2;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
@@ -59,15 +56,7 @@ public class FtcOpModeRegister implements OpModeRegister {
      * If two or more op modes are registered with the same name, the app will display an error.
      */
 
-
-
-    //manager.register("MatrixK9TeleOp", MatrixK9TeleOp.class);
-    manager.register("RocketBot", RocketBot.class);
-    manager.register("JOpMode", JOpMode.class);
-    manager.register("1StickTest", OneStickTest.class);
-    manager.register("CamTest", CamTest.class);
     manager.register("RockyV2", RockyV2.class);
-
 
 
 
