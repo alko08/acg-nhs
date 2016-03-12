@@ -1,2 +1,28 @@
-.rocketBot/.idea
-.rocketBot/.gradle
+# built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# generated files
+rocketBot/bin/
+rocketBot/gen/
+
+# Local configuration file (sdk path, etc)
+rocketBot/local.properties
+
+# Windows thumbnail db
+rocketBot/Thumbs.db
+
+# OSX files
+rocketBot/.DS_Store
+
+# Android Studio
+*.iml
+rocketBot/.idea
+rocketBot/.gradle
+rocketBot/build/
+
+*ASUS_PC_01*
+rocketBot/FtcRobotController/FtcRobotController.iml
