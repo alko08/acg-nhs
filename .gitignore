@@ -20,6 +20,8 @@ rocketBot/.DS_Store
 
 # Android Studio
 *.iml
+*.jar
+*.dex
 rocketBot/.idea
 rocketBot/.gradle
 rocketBot/build/

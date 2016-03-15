@@ -83,7 +83,7 @@ public class RockyV2 extends ResQ_Library{
         if (gamepad1.right_stick_x < -0.4) hCamTurnPosition = hCamTurnPosition - MoveRate;
 
         //Keep positions of servos between 1 and 0
-        vCamTurnPosition = Range.clip(vCamTurnPosition, .41, 1);
+        vCamTurnPosition = Range.clip(vCamTurnPosition, .66, .91);
         hCamTurnPosition = Range.clip(hCamTurnPosition, 0, 1);
 
         //Write the values to the servos
